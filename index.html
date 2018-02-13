@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <input id="str1">
+    <input id="str2">
+    <p id="result"></p>
+
+
+    <script src="lcs.js"></script>
+    <script>
+      // main
+      var s1 = document.querySelector('#str1')
+      var s2 = document.querySelector('#str2')
+
+      s1.oninput = render
+      s2.oninput = render
+
+      function render() {
+        var str1 = s1.value
+        var str2 = s2.value
+
+        var {ses} = dp_lcs(str1, str2)
+        var dom = visualize(str1, ses)
+        document.querySelector('#result').innerHTML = dom
+      }
+
+    </script>
+  </body>
+</html>
